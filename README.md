@@ -28,7 +28,18 @@ The Poisson distribution is the discrete probability distribution of the number 
 
 ![image](https://user-images.githubusercontent.com/103921593/230282876-f4a5afbf-cac1-4648-a1b0-c78840638a8e.png)
 
-# Program :import numpy as np
+# Program :
+### poisson distribution:
+```python
+DEVELOPED BY: SANJAY.M
+REF NO      :23013084
+
+##  f - frequency of x
+## sf - sum of frequency
+## pr - probability function for poisson distribution
+## xi - chi square test value
+
+import numpy as np
 import math
 import scipy.stats
 L=[int(i) for i in input().split()]
@@ -50,7 +61,7 @@ p=list();E=list();xi=list()
 print("X P(X=x) Obs.Fr Exp.Fr xi")
 print("--------------------------")
 for x in range(M+1):
-    p.append(math.exp(-mean)mean*x/math.factorial(x))
+    p.append(math.exp(-mean)*mean**x/math.factorial(x))
     E.append(p[x]*sf)
     xi.append((f[x]-E[x])**2/E[x])
     print("%2.2f %2.3f %4.2f %3.2f %3.2f"%(x,p[x],f[x],E[x],xi[x]))
@@ -59,15 +70,13 @@ cal_chi2_sq=np.sum(xi)
 print("Calculated value of Chi square is %4.2f"%cal_chi2_sq)
 table_chi2=scipy.stats.chi2.ppf(1-.01,df=M)
 print("Table value of chi square at 1 level is %4.2f"%table_chi2)
-if cal_chi2_sq<table_chi2:
-    print("The given data can be fitted in poisson Distribution at 1% LOS")
-else:
-    print("The given data cannot be fitted in Poisson Distribution at 1% LOS")
+```
 
- 
+
+   
 
 # Output : 
-![ex 02](https://github.com/sanjayofficial2005/Poisson_distribution/assets/148048602/c0ec7ad3-0679-452c-8d7b-815f70331340)
+![ex 02 output pqm](https://github.com/sanjayofficial2005/Poisson_distribution/assets/148048602/561a3520-04d7-484c-a544-aefc88c10455)
 
 
 
